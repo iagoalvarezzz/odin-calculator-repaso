@@ -55,7 +55,8 @@ function execute(){
     return;
   }
 
-  firstNumber = Math.floor(operate(+firstNumber,+secondNumber,operator));
+  firstNumber = operate(+firstNumber,+secondNumber,operator);
+  firstNumber = Math.round((firstNumber + Number.EPSILON) * 100) / 100;
   operator = "";
   secondNumber = "";
   result = true;
